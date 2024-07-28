@@ -1,8 +1,6 @@
-import { BASE_API_URL } from '@env';
-
 const fetchCountryDetails = async (alpha2Code, callback) => {
     try {
-        const response = await fetch(`${BASE_API_URL}/alpha/${alpha2Code}?fields=cca2,name,cca3,currencies`);
+        const response = await fetch(`https://restcountries.com/v3.1/alpha/${alpha2Code}?fields=cca2,name,cca3,currencies`);
         const data = await response.json();
         const updatedData = { ...data };
 
@@ -19,7 +17,7 @@ const fetchCountryDetails = async (alpha2Code, callback) => {
                 updatedData[key] = currencyValue;
             }
         })
-        
+
         callback(null, updatedData);
     } catch (error) {
         callback(error.message);

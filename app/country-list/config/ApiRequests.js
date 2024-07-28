@@ -1,8 +1,6 @@
-import { BASE_API_URL } from '@env';
-
 const fetchCountries = async (callback) => {
     try {
-        const response = await fetch(`${BASE_API_URL}/all?fields=cca2,name`);
+        const response = await fetch(`https://restcountries.com/v3.1/all?fields=cca2,name`);
         const data = await response.json();
         callback(null, data.slice(0, 20)); // Showing 20 countries only.
     } catch (error) {
