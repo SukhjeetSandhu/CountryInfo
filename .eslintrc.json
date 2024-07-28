@@ -1,0 +1,55 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+  },
+  "rules": {
+      "indent": [2, 4, { "SwitchCase": 1 }],
+      "max-len": [1, 120, 2, {"ignoreComments": true}],
+      "object-curly-newline": [2, { "multiline": true }],
+      "react/jsx-filename-extension": "off",
+      "react/jsx-indent": "off",
+      "react/jsx-indent-props": "off",
+      "react/prefer-stateless-function": 0,
+      "react/react-in-jsx-scope": 0,
+      "react/forbid-prop-types": "off",
+      "react/require-default-props": "off",
+      "linebreak-style":"off",
+      "class-methods-use-this":"off",
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "import/no-unresolved":"warn",
+      "import/prefer-default-export": "off",
+      "react/jsx-no-undef": ["error", { "allowGlobals": true }],
+      "react/no-this-in-sfc": "warn",
+      "jsx-a11y/anchor-is-valid": [ "error", {
+        "components": [ "Link" ],
+        "specialLink": [ "to" ]
+      }],
+      "jsx-a11y/label-has-for": "off",
+      "react/no-array-index-key": "warn",
+      "react/jsx-one-expression-per-line": "off",
+      "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+      "react-hooks/exhaustive-deps": "off" // Checks effect dependencies
+  },
+    "globals": {
+      "React": false,
+      "PropTypes": false
+  },
+  "overrides": [
+      {
+        "files": ["*.stories.js", "Demo*.js"],
+        "rules": {
+          "no-console": "off"
+        }
+      }
+  ],
+  "settings": {
+      "import/resolver": "webpack"
+  },
+  "plugins": [
+      "react-hooks"
+  ]
+}
